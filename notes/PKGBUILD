@@ -1,0 +1,19 @@
+pkgname=notes-app
+pkgver=1.0
+pkgrel=1
+pkgdesc="Заметки"
+arch=('any')
+url="https://ddosxd.ru/"
+license=('MIT')
+depends=('python' 'python-pyqt5')
+source=("app.py" "icon.png" "notes-app.desktop")
+md5sums=('SKIP' 'SKIP' 'SKIP') # По желанию можно добавить настоящие md5 суммы
+
+package() {
+  cd "$srcdir"
+  install -Dm755 app.py "$pkgdir/usr/bin/notes-app"
+  install -Dm644 icon.png "$pkgdir/usr/share/pixmaps/notes-app.png"
+  
+  # Создаем .desktop файл для интеграции с меню приложений рабочего стола
+  install -Dm644 notes-app.desktop "$pkgdir/usr/share/applications/notes-app.desktop"
+}

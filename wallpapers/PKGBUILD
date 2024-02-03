@@ -1,0 +1,14 @@
+# Maintainer: ddosxd
+pkgname=ddos-walls
+pkgver=1.0
+pkgrel=1
+pkgdesc="A collection of wallpapers"
+arch=('any')
+license=('unknown')
+source=("walls.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+  install -dm755 "${pkgdir}/usr/share/backgrounds/${pkgname}/"
+  cp -a walls/* "${pkgdir}/usr/share/backgrounds/${pkgname}/"
+}

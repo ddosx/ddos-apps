@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Ai блокнот
+Exec=notepad-app
+Icon=/usr/share/pixmaps/ainotes.png
+Categories=Office;

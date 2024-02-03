@@ -1,0 +1,18 @@
+pkgname=kvantum-theme-layan-git
+pkgver=1.0
+pkgrel=1
+pkgdesc="Layan theme for Kvantum"
+arch=('any')
+url="https://github.com/vinceliuice/Layan-kde"
+license=('GPL') # Укажите лицензию, под которой распространяется тема, если она известна
+depends=()
+source=(theme.tar) # Можно указать прямую ссылку на архив темы или разместить файлы темы в архив zip
+md5sums=('SKIP') # Используйте 'SKIP' или рассчитайте md5 сумму вашего файла
+
+package() {
+  cd "$srcdir"
+
+  # Распаковываем и устанавливаем тему в соответствующую директорию
+  mkdir -p "$pkgdir/usr/share/Kvantum"
+  cp -a theme/usr/share/Kvantum/* "$pkgdir/usr/share/Kvantum/"
+}

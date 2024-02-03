@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Notes App
+Exec=notes-app
+Icon=/usr/share/pixmaps/notes-app.png
+Categories=Office;

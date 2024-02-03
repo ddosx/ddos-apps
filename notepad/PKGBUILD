@@ -1,0 +1,20 @@
+pkgname=notepad-app
+pkgver=1.0
+pkgrel=1
+pkgdesc="Ai notepad"
+arch=('any')
+url="https://ddosxd.ru/"
+license=('custom')
+depends=('python' 'python-pyqt5')
+source=("notepad_app.py" "ainotes.png" "notepad-app.desktop")
+md5sums=('SKIP' 'SKIP' 'SKIP') # Используйте 'SKIP' для упрощения или сгенерируйте правильные MD5
+
+package() {
+    cd "$srcdir"
+    install -Dm755 notepad_app.py "$pkgdir/usr/bin/notepad-app"
+    install -Dm644 ainotes.png "$pkgdir/usr/share/pixmaps/ainotes.png"
+    
+    # Создаем файл .desktop для интеграции с рабочим столом
+    install -Dm644 notepad-app.desktop "$pkgdir/usr/share/applications/notepad-app.desktop"
+}
+

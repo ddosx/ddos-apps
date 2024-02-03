@@ -1,0 +1,24 @@
+# Maintainer: Your Name <your.email@example.com>
+
+pkgname=nordzy-cursors
+pkgver=1.0
+pkgrel=1
+pkgdesc="Nordzy Cursors - A cursor theme for X11 inspired by Nord colors"
+arch=('any')
+url="http://example.com/nordzy-cursors-project-page"
+license=('GPL')
+depends=('xorg-xsetroot')
+source=("cursors.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+    cd "${srcdir}/Nordzy-cursors-white"
+    
+    # Copying cursor theme to the system-wide theme directory
+    install -dm755 "${pkgdir}/usr/share/icons/Nordzy-cursors-white"
+    cp -r cursors "${pkgdir}/usr/share/icons/Nordzy-cursors-white/"
+    cp index.theme "${pkgdir}/usr/share/icons/Nordzy-cursors-white/"
+    
+    # Update the icon cache for the Nordzy cursor theme
+    gtk-update-icon-cache -f -t "${pkgdir}/usr/share/icons/Nordzy-cursors-white"
+}
