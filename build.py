@@ -1,6 +1,6 @@
 import os
 
-exclude = ['out', 'build.py']
+exclude = ['out', 'build.py','.git', '.gitignore']
 
 for i in os.listdir('./'):
     if i in exclude:
